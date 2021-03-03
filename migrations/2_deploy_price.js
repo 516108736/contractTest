@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-const PV3 = artifacts.require("PriceConsumerV3");
+const PSCF = artifacts.require("PriceScf");
 
 module.exports = function (deployer) {
-deployer.deploy(PV3);
+deployer.deploy(PSCF);
 };
