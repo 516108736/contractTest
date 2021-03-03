@@ -1,8 +1,8 @@
 package main
 
 import (
-	cc "./contractGo"
 	"fmt"
+	cc "github.com/contractTest/gcode/contractGo"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 )
@@ -13,11 +13,13 @@ func main()  {
 	if err != nil {
 		panic(err)
 	}
-	address:=common.HexToAddress("0xb043097ba18f6b17022F994A3dC2DB88054b00b1")
+	address:=common.HexToAddress("0xb155628574d067cc89fab428a430eaa9621abda65118f468ed7254d156c0418f")
 	instance,err:=cc.NewScf(address,client)
 	if err!=nil{
 		panic(err)
 	}
-	data,err:=instance.GetLatestPrice(nil)
-	fmt.Println("errr",data,err)
+	data,err:=instance.GetETHUSDTLatestPrice(nil)
+	fmt.Println("GetETHUSDTLatestPrice errr",data,err)
+	data,err=instance.GetBTCUSDTLatestPrice(nil)
+	fmt.Println("GetBTCUSDTLatestPrice err",data,err)
 }

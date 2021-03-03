@@ -27,7 +27,7 @@ var (
 )
 
 // ScfABI is the input ABI used to generate the binding from.
-const ScfABI = "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getLatestPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\",\"constant\":true}]"
+const ScfABI = "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getETHUSDTLatestPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\",\"constant\":true},{\"inputs\":[],\"name\":\"getBTCUSDTLatestPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\",\"constant\":true}]"
 
 // Scf is an auto generated Go binding around an Ethereum contract.
 type Scf struct {
@@ -171,12 +171,12 @@ func (_Scf *ScfTransactorRaw) Transact(opts *bind.TransactOpts, method string, p
 	return _Scf.Contract.contract.Transact(opts, method, params...)
 }
 
-// GetLatestPrice is a free data retrieval call binding the contract method 0x8e15f473.
+// GetBTCUSDTLatestPrice is a free data retrieval call binding the contract method 0x6c6d750a.
 //
-// Solidity: function getLatestPrice() view returns(int256)
-func (_Scf *ScfCaller) GetLatestPrice(opts *bind.CallOpts) (*big.Int, error) {
+// Solidity: function getBTCUSDTLatestPrice() view returns(int256)
+func (_Scf *ScfCaller) GetBTCUSDTLatestPrice(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _Scf.contract.Call(opts, &out, "getLatestPrice")
+	err := _Scf.contract.Call(opts, &out, "getBTCUSDTLatestPrice")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -188,16 +188,47 @@ func (_Scf *ScfCaller) GetLatestPrice(opts *bind.CallOpts) (*big.Int, error) {
 
 }
 
-// GetLatestPrice is a free data retrieval call binding the contract method 0x8e15f473.
+// GetBTCUSDTLatestPrice is a free data retrieval call binding the contract method 0x6c6d750a.
 //
-// Solidity: function getLatestPrice() view returns(int256)
-func (_Scf *ScfSession) GetLatestPrice() (*big.Int, error) {
-	return _Scf.Contract.GetLatestPrice(&_Scf.CallOpts)
+// Solidity: function getBTCUSDTLatestPrice() view returns(int256)
+func (_Scf *ScfSession) GetBTCUSDTLatestPrice() (*big.Int, error) {
+	return _Scf.Contract.GetBTCUSDTLatestPrice(&_Scf.CallOpts)
 }
 
-// GetLatestPrice is a free data retrieval call binding the contract method 0x8e15f473.
+// GetBTCUSDTLatestPrice is a free data retrieval call binding the contract method 0x6c6d750a.
 //
-// Solidity: function getLatestPrice() view returns(int256)
-func (_Scf *ScfCallerSession) GetLatestPrice() (*big.Int, error) {
-	return _Scf.Contract.GetLatestPrice(&_Scf.CallOpts)
+// Solidity: function getBTCUSDTLatestPrice() view returns(int256)
+func (_Scf *ScfCallerSession) GetBTCUSDTLatestPrice() (*big.Int, error) {
+	return _Scf.Contract.GetBTCUSDTLatestPrice(&_Scf.CallOpts)
+}
+
+// GetETHUSDTLatestPrice is a free data retrieval call binding the contract method 0x26f09634.
+//
+// Solidity: function getETHUSDTLatestPrice() view returns(int256)
+func (_Scf *ScfCaller) GetETHUSDTLatestPrice(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _Scf.contract.Call(opts, &out, "getETHUSDTLatestPrice")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// GetETHUSDTLatestPrice is a free data retrieval call binding the contract method 0x26f09634.
+//
+// Solidity: function getETHUSDTLatestPrice() view returns(int256)
+func (_Scf *ScfSession) GetETHUSDTLatestPrice() (*big.Int, error) {
+	return _Scf.Contract.GetETHUSDTLatestPrice(&_Scf.CallOpts)
+}
+
+// GetETHUSDTLatestPrice is a free data retrieval call binding the contract method 0x26f09634.
+//
+// Solidity: function getETHUSDTLatestPrice() view returns(int256)
+func (_Scf *ScfCallerSession) GetETHUSDTLatestPrice() (*big.Int, error) {
+	return _Scf.Contract.GetETHUSDTLatestPrice(&_Scf.CallOpts)
 }
